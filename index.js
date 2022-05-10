@@ -7,6 +7,13 @@ require("./utils/dbConnect");
 app.use(cors());
 app.use(express.json());
 
+
+app.use("/", async(req,res) => {
+	res.status(200).json({
+	message:"Welcome to the MarketPlace API application "
+	})
+	)
+
 app.use("/api/user", require("./router/userRouter"));
 app.use("/api/user", require("./otherController/userUpload"));
 
