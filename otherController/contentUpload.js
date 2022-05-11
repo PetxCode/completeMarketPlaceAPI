@@ -75,6 +75,21 @@ router.get("/:id/viewContent/:contentID", async (req, res) => {
 	}
 });
 
+router.get("/allContent", async (req, res) => {
+	try {
+		const getUser = await contentModel.find();
+
+		res.status(201).json({
+			status: "view contents",
+			data: getUser,
+		});
+	} catch (err) {
+		res.status(404).json({
+			message: err.message,
+		});
+	}
+});
+
 router.delete("/:id/viewContent/:contentID", verify, async (req, res) => {
 	try {
 		if (req.user.seller === true) {
