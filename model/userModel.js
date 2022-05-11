@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const userModel = mongoose.Schema(
 	{
-		count: {
+		userName: {
 			type: String,
 		},
 		email: {
